@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C94096D1-F538-44B7-A506-E157E3595C2A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Feeder</RootNamespace>
+    <AssemblyName>Feeder</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddFeeder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFeeder.Designer.cs">
+      <DependentUpon>AddFeeder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckState.Designer.cs">
+      <DependentUpon>CheckState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckTimetable.Designer.cs">
+      <DependentUpon>CheckTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeederControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeederControl.Designer.cs">
+      <DependentUpon>FeederControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetLogs.Designer.cs">
+      <DependentUpon>GetLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame.Designer.cs">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakeRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeRequest.Designer.cs">
+      <DependentUpon>MakeRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PourFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PourFeed.Designer.cs">
+      <DependentUpon>PourFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetTimetable.Designer.cs">
+      <DependentUpon>SetTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwitchMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwitchMode.Designer.cs">
+      <DependentUpon>SwitchMode.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddFeeder.resx">
+      <DependentUpon>AddFeeder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckState.resx">
+      <DependentUpon>CheckState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckTimetable.resx">
+      <DependentUpon>CheckTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeederControl.resx">
+      <DependentUpon>FeederControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetLogs.resx">
+      <DependentUpon>GetLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame.resx">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeRequest.resx">
+      <DependentUpon>MakeRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PourFeed.resx">
+      <DependentUpon>PourFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SetTimetable.resx">
+      <DependentUpon>SetTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwitchMode.resx">
+      <DependentUpon>SwitchMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{1C3FB904-EBDE-4B6E-A392-CBE277FF0A7B}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation\Presentation.csproj">
+      <Project>{CC369EAA-43F5-4B08-A024-3EA58F3B37AD}</Project>
+      <Name>Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
