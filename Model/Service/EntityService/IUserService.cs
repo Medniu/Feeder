@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Model.Service.EntityService
 {
     public interface IUserService
-    {
+    {       
+      
     }
 }

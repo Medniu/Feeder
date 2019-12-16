@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Service
 {
-    interface ICheckTimetableService : IService
+    public interface ICheckTimetableService : IService
     {
     }
 }

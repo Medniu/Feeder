@@ -88,6 +88,7 @@
             this.Admin.TabIndex = 0;
             this.Admin.Text = "Admin";
             this.Admin.UseVisualStyleBackColor = true;
+            this.Admin.Click += new System.EventHandler(this.Admin_Click);
             // 
             // label3
             // 
@@ -209,6 +210,7 @@
             this.User.TabIndex = 1;
             this.User.Text = "User";
             this.User.UseVisualStyleBackColor = true;
+            this.User.Click += new System.EventHandler(this.User_Click);
             // 
             // MakeRequest
             // 

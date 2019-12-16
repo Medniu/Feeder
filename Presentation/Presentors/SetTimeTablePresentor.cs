@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Presentors
 {
-    public class SetTimeTablePresentor : AbstractPresenter
+    public class SetTimeTablePresentor : AbstractPresenter<ISetTimeTableService, ISetTimetable>
     {
         public SetTimeTablePresentor(IKernel kernel, SetTimeTableService service, ISetTimetable view)
         {

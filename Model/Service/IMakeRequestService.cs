@@ -8,5 +8,8 @@ namespace Model.Service
 {
     public interface IMakeRequestService : IService
     {
+        void AddRequest(string message);
+
+        List<string> Requests { get; set; }
     }
 }

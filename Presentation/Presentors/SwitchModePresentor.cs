@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Presentors
 {
-    public class SwitchModePresentor : AbstractPresenter
+    public class SwitchModePresentor : AbstractPresenter<ISwitchModeService, ISwitchMode>
     {
         public SwitchModePresentor(IKernel kernel, SwitchModeService service, ISwitchMode view)
         {

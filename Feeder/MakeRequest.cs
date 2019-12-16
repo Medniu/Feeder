@@ -17,5 +17,19 @@ namespace Feeder
         {
             InitializeComponent();
         }
+
+        public event Action ClickMakeRequest;
+
+        public string Request { get => textBox1.Text; set => throw new NotImplementedException(); }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            ClickMakeRequest.Invoke();
+        }
     }
 }

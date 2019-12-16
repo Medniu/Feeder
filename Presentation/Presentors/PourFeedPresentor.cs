@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Presentors
 {
-    public class PourFeedPresentor : AbstractPresenter
+    public class PourFeedPresentor : AbstractPresenter<IPourFeedService, IPourFeed>
     {
         public PourFeedPresentor(IKernel kernel, PourFeedService service, IPourFeed view)
         {

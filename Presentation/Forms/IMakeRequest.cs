@@ -8,5 +8,7 @@ namespace Presentation.Forms
 {
     public interface IMakeRequest : IView
     {
+        event Action ClickMakeRequest;
+        string Request { get; set; }
     }
 }

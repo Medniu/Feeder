@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Presentors
 {
-    public class FeederControlPresentor : AbstractPresenter
+    public class FeederControlPresentor : AbstractPresenter<IFeederControlService,IFeederControl>
     {
         public FeederControlPresentor(IKernel kernel, FeederControlService service, IFeederControl view)
         {

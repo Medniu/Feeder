@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Presentors
 {
-    public class CheckStatePresentor : AbstractPresenter
+    public class CheckStatePresentor : AbstractPresenter<ICheckStateService, ICheckState>
     {
         public CheckStatePresentor(IKernel kernel, CheckStateService service, ICheckState view)
         {

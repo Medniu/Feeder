@@ -17,5 +17,31 @@ namespace Feeder
         {
             InitializeComponent();
         }
+
+        public string CharacterName => textBox1.Text;
+
+        public event Action AddUser;
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AddUser.Invoke();
+        }
+
+        private void CreateUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+        /*private void lv_Characters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_Characters.SelectedItems.Count > 0)
+            {
+                tb_CharacterName.Text = lv_Characters.SelectedItems[0].Text;
+            }
+        }*/
     }
 }

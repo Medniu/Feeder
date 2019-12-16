@@ -8,5 +8,6 @@ namespace Model.Service.EntityService
 {
     public interface IFeederService
     {
+        
     }
 }

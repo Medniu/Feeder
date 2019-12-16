@@ -43,8 +43,14 @@
   <ItemGroup>
     <Compile Include="FeederRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeTableRepository.cs" />
+    <Compile Include="RequestRepository.cs" />
     <Compile Include="UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{1C3FB904-EBDE-4B6E-A392-CBE277FF0A7B}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

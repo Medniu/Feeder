@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Model
 {
     public interface ITimer
-    {/*
+    {
         event EventHandler Tick;
 
         bool Enabled { get; set; }
@@ -15,6 +15,6 @@ namespace Model
 
         void Start();
         void Stop();
-     */
+     
     }
 }

@@ -9,5 +9,11 @@ namespace Model.Entity
     public class User : BaseEntity
     {
         public string Name { get; set; }
+        public List<Feeder> Feeders { get; set; }
+
+        public User()
+        {
+            Feeders = new List<Feeder>();
+        }
     }
 }

@@ -10,5 +10,11 @@ namespace Model.Entity
     {
         public string Name { get; set; }
         public int Amount_of_food { get; set; }
+        TimeTable TimeTable { get; set; } = new TimeTable();
+    }
+
+    public class TimeTable
+    {
+        public int StartTime = 0;
     }
 }

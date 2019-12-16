@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Presentors
 {
-    class GetLogsPresentor : AbstractPresenter
+    class GetLogsPresentor : AbstractPresenter<IGetLogsService, IGetLogs>
     {
         public GetLogsPresentor(IKernel kernel, GetLogsService service, IGetLogs view)
         {

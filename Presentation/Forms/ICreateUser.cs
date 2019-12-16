@@ -8,5 +8,7 @@ namespace Presentation.Forms
 {
     public interface ICreateUser : IView
     {
+        event Action AddUser;
+        string CharacterName { get;  }
     }
 }

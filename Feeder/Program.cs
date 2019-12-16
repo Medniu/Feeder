@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 using Model.Service;
 using Ninject;
 using Presentation.Forms;
 using Presentation.Presentors;
+using DAL;
+using Model.Entity;
 
 namespace Feeder
 {
@@ -22,6 +25,7 @@ namespace Feeder
             Ninject.StandardKernel kernel = new StandardKernel();
             kernel.Bind<ApplicationContext>().ToConstant(new ApplicationContext());
 
+            kernel.Bind<ITimer>().To<WinFormTimer>();
             kernel.Bind<IMainForm>().To<MainFrame>();
             kernel.Bind<IFeederControl>().To<FeederControl>();
             kernel.Bind<IAddFeeder>().To<AddFeeder>();
@@ -45,7 +49,10 @@ namespace Feeder
             kernel.Bind<MakeRequestPresentor>().ToSelf();
             kernel.Bind<PourFeedPresentor>().ToSelf();
             kernel.Bind<SwitchModePresentor>().ToSelf();
-            
+
+            kernel.Bind<IRepository<string>>().To<RequestRepository>().InSingletonScope();
+            kernel.Bind<IRepository<User>>().To<UserRepository>();
+            kernel.Bind<IRepository<Model.Entity.Feeder>>().To<FeederRepository>();
 
             kernel.Bind<IMainFrameService>().To<MainFrameService>().InSingletonScope();
 
@@ -56,5 +63,6 @@ namespace Feeder
             Application.Run(kernel.Get<ApplicationContext>());
 
         }
+        internal class WinFormTimer : System.Windows.Forms.Timer, ITimer { }
     }
 }

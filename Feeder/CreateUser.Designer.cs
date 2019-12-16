@@ -48,6 +48,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Register user";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -68,6 +69,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "CreateUser";
             this.Text = "CreateUser";
+            this.Load += new System.EventHandler(this.CreateUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
