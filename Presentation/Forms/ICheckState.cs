@@ -8,5 +8,7 @@ namespace Presentation.Forms
 {
     public interface ICheckState : IView
     {
+        event Action UpdateState;
+        string StateTextBox { get; set; }
     }
 }

@@ -103,7 +103,7 @@ namespace Presentation.Presentors
                     _service.SetSelectedFeeder(_view.AdminTabFeederCombobox);
                     break;
                 case CurrentTab.User:
-                    _service.SetSelectedUser(_view.UserTabFeederCombobox);
+                    _service.SetSelectedFeeder(_view.UserTabFeederCombobox);
                     break;
             };
         }

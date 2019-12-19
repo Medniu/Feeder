@@ -19,9 +19,18 @@ namespace Feeder
 
         }
 
+        public string StateTextBox { get => throw new NotImplementedException();
+            set
+            {
+                textBox1.Text = value;
+            }
+        }
+
+        public event Action UpdateState;
+
         private void CheckState_Load(object sender, EventArgs e)
         {
-
+            UpdateState?.Invoke();
         }
     }
 }

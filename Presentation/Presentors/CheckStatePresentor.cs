@@ -11,11 +11,20 @@ namespace Presentation.Presentors
 {
     public class CheckStatePresentor : AbstractPresenter<ICheckStateService, ICheckState>
     {
-        public CheckStatePresentor(IKernel kernel, CheckStateService service, ICheckState view)
+        private IMainFrameService _mainFrameService;
+        public CheckStatePresentor(IKernel kernel, CheckStateService service,IMainFrameService mainFrameService, ICheckState view)
         {
             _kernel = kernel;
             _service = service;
             _view = view;
+            _mainFrameService = mainFrameService;
+
+            _view.UpdateState += () => UpdateState();
+        }
+
+        private void UpdateState()
+        {
+            _view.StateTextBox = _mainFrameService.SelectedFeeder.Amount_of_food.ToString();
         }
     }
 }

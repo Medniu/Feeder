@@ -8,5 +8,17 @@ namespace Presentation.Forms
 {
     public interface ICheckTimetable : IView
     {
+        event Action UpdateFields;
+        string Field_1 { get; set; }
+        string Field_2 { get; set; }
+        string Field_3 { get; set; }
+        string Field_4 { get; set; }
+        string Field_5 { get; set; }
+        string Field_6 { get; set; }
+        string Field_7 { get; set; }
+        string Field_8 { get; set; }
+        string Field_9 { get; set; }
+        string Field_10 { get; set; }
+
     }
 }

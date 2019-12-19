@@ -20,9 +20,12 @@ namespace Model.Service
 
         private IRepository <string> _request_repository { get; set; }
         private IRepository<User> _user_repository { get; set; }
-        public User SelectedUser { get ; private set ; }
+        public User SelectedUser { get ; /*private*/ set ; }
 
-        public Feeder SelectedFeeder { get; private set; }
+        public Feeder SelectedFeeder { get; set; }
+
+        private int _currentHour = 0;
+        private int _amountOfTimerTicks  = 0;
 
         public MainFrameService(ITimer timer , IRepository<string> request_repository,IRepository <User> user_repository)
         {
@@ -43,6 +46,27 @@ namespace Model.Service
             Users = _user_repository.GetAll();
             UpdateUsers?.Invoke();
             UpdateRequests?.Invoke();
+            _amountOfTimerTicks++;
+            if (_amountOfTimerTicks % 10 == 0)
+            {
+                if ((_currentHour + 1) == 24)
+                    _currentHour = 0;
+                else
+                    _currentHour++;
+
+                foreach (var user in _user_repository.GetAll())
+                    foreach (var feeder in user.Feeders)
+                        if (feeder.TimeTable.TimeValue.Any(kv => kv.Item1 == _currentHour))
+                            feeder.Amount_of_food = feeder.TimeTable.TimeValue.
+                                Where(kv => kv.Item1 == _currentHour).Select(kv => kv.Item2).FirstOrDefault();
+            }
+
+            if (_amountOfTimerTicks % (new Random().Next(9) + 1) == 0)
+            {
+                foreach (var user in _user_repository.GetAll())
+                    foreach (var feeder in user.Feeders)
+                        feeder.Amount_of_food = feeder.Amount_of_food - new Random().NextDouble();
+            }
         }
 
         public void SetSelectedUser(string userName)
